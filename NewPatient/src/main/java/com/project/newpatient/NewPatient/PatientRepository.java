@@ -1,14 +1,14 @@
 package com.project.newpatient.NewPatient;
-/*import java.sql.Connection;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;*/
+import java.util.List;
 
 public class PatientRepository {
-/*Connection con = null;
+Connection con = null;
 	
 	
 	public PatientRepository() {
@@ -17,7 +17,7 @@ public class PatientRepository {
 			
 				// Connect to Database
 				Class.forName("com.mysql.jdbc.Driver");
-				con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3308/patientdatabase","root","");
+				con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3308/patientdb","root","");
 				System.out.println("Database Connected....");
 		}
 		catch(Exception e) {
@@ -29,7 +29,7 @@ public class PatientRepository {
 	public List<Patient> getPatient() {
 		
 		List<Patient> patient = new ArrayList<>(); 
-		String sql = "select * from patientpatientdatabase"; 
+		String sql = "select * from patientdb"; 
 		
 		try {
 			
@@ -115,7 +115,7 @@ public class PatientRepository {
 	}
 
 	
-	public void update(Patient a1) {
+	/*public void update(Patient a1) {
 		
 		String sql = "update patient set nic=?,fname=?,lname=?,age=?,address=?,gender=?,email=?,phoneNo=? where pid=?";
 		try 
