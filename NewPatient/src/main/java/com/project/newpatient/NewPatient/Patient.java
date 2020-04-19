@@ -1,10 +1,10 @@
 package com.project.newpatient.NewPatient;
 
-/*import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement*/
+@XmlRootElement
 public class Patient {
-	/*private int pid;
+	private int pid;
 	private String nic;
 	private String fname;
 	private String lname;
@@ -71,5 +71,5 @@ public class Patient {
 	public String toString() {
 		return "Patient [pid=" + pid + ", nic=" + nic + ", fname=" + fname + ", lname=" + lname + ", age=" + age
 				+ ", address=" + address + ", gender=" + gender + ", email=" + email + ", phoneNo=" + phoneNo + "]";
-	}*/
+	}
 }
