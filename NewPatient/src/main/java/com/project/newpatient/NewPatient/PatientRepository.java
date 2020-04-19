@@ -141,7 +141,7 @@ Connection con = null;
 		
 	}
 
-	/*public void delete(int pid) {
+	public void delete(int pid) {
 		String sql = "delete from patient where pid=?";
 		try 
 		{
@@ -157,5 +157,5 @@ Connection con = null;
 		{
 			System.out.println(e);
 		}
-}*/
+}
 }
