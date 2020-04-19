@@ -15,8 +15,8 @@ import javax.ws.rs.core.MediaType;
 public class PatientResource {
 	PatientRepository repo = new PatientRepository();
 
+	//GET request created
 	@GET
-	
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML}) 
 	public List<Patient> getPatient() {  
 		
@@ -35,6 +35,7 @@ public class PatientResource {
 		return repo.getPatient(pid);
 	}
 
+	//POST request created
 	@POST
 	@Path("patient")
 	@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
@@ -45,7 +46,7 @@ public class PatientResource {
 		return a1;
 	}
 	
-	
+	//PUT request created
 	@PUT
 	@Path("patient")
 	@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
@@ -67,6 +68,7 @@ public class PatientResource {
 		return a1;
 	}
 	
+	//DELETE request created
 	@DELETE
 	@Path("patient/{pid}")
 	public Patient removePatient(@PathParam("pid")int pid)

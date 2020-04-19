@@ -15,7 +15,6 @@ Connection con = null;
 		
 		try {
 			
-				// Connect to Database
 				Class.forName("com.mysql.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3308/patientdb","root","");
 				System.out.println("Database Connected....");
@@ -95,6 +94,7 @@ Connection con = null;
 		try 
 		{
 		PreparedStatement st = con.prepareStatement(sql);
+		
 		st.setInt(1, a1.getPid());
 		st.setString(2, a1.getNic());
 		st.setString(3, a1.getFname());
@@ -104,6 +104,7 @@ Connection con = null;
 		st.setString(7, a1.getGender());
 		st.setString(8, a1.getEmail());
 		st.setInt(9, a1.getPhoneNo());
+		
 		st.executeUpdate();
 		
 		}
@@ -114,13 +115,13 @@ Connection con = null;
 		
 	}
 
-	
 	public void update(Patient a1) {
 		
 		String sql = "update patient set nic=?,fname=?,lname=?,age=?,address=?,gender=?,email=?,phoneNo=? where pid=?";
 		try 
 		{
 		PreparedStatement st = con.prepareStatement(sql);
+		
 		st.setString(1, a1.getNic());
 		st.setString(2, a1.getFname());
 		st.setString(3, a1.getLname());
@@ -148,7 +149,6 @@ Connection con = null;
 		PreparedStatement st = con.prepareStatement(sql);
 		
 		st.setInt(1, pid);
-
 
 		st.executeUpdate();
 		
