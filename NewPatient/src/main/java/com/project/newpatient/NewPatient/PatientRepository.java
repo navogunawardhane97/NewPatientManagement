@@ -115,7 +115,7 @@ Connection con = null;
 	}
 
 	
-	/*public void update(Patient a1) {
+	public void update(Patient a1) {
 		
 		String sql = "update patient set nic=?,fname=?,lname=?,age=?,address=?,gender=?,email=?,phoneNo=? where pid=?";
 		try 
@@ -141,7 +141,7 @@ Connection con = null;
 		
 	}
 
-	public void delete(int pid) {
+	/*public void delete(int pid) {
 		String sql = "delete from patient where pid=?";
 		try 
 		{
