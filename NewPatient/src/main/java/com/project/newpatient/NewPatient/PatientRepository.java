@@ -14,7 +14,7 @@ Connection con = null;
 	public PatientRepository() {
 		
 		try {
-			
+				// Connect to the Database
 				Class.forName("com.mysql.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3308/patientdb","root","");
 				System.out.println("Database Connected....");
@@ -89,12 +89,15 @@ Connection con = null;
 		return p;
 	}
 
+	//Add a new patient
 	public void create(Patient a1) {
 		String sql = "insert into patient values(?,?,?,?,?,?,?,?,?)";
 		try 
 		{
+			//Create a prepared statement for create method
 		PreparedStatement st = con.prepareStatement(sql);
 		
+		//Binding values
 		st.setInt(1, a1.getPid());
 		st.setString(2, a1.getNic());
 		st.setString(3, a1.getFname());
@@ -105,6 +108,7 @@ Connection con = null;
 		st.setString(8, a1.getEmail());
 		st.setInt(9, a1.getPhoneNo());
 		
+		//Execute the statement
 		st.executeUpdate();
 		
 		}
@@ -115,13 +119,14 @@ Connection con = null;
 		
 	}
 
+	//Create a prepared statement for update method
 	public void update(Patient a1) {
 		
 		String sql = "update patient set nic=?,fname=?,lname=?,age=?,address=?,gender=?,email=?,phoneNo=? where pid=?";
 		try 
 		{
 		PreparedStatement st = con.prepareStatement(sql);
-		
+		//Binding values
 		st.setString(1, a1.getNic());
 		st.setString(2, a1.getFname());
 		st.setString(3, a1.getLname());
@@ -131,7 +136,8 @@ Connection con = null;
 		st.setString(7, a1.getEmail());
 		st.setInt(8, a1.getPhoneNo());
 		st.setInt(9, a1.getPid());
-
+		
+		//Execute the statement
 		st.executeUpdate();
 		
 		}
@@ -142,14 +148,17 @@ Connection con = null;
 		
 	}
 
+	//Create a prepared statement for delete method
 	public void delete(int pid) {
 		String sql = "delete from patient where pid=?";
 		try 
 		{
 		PreparedStatement st = con.prepareStatement(sql);
 		
+		//Binding values
 		st.setInt(1, pid);
-
+		
+		//Execute the statement
 		st.executeUpdate();
 		
 		}
